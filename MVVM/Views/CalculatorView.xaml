@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:calculatorApp"
+             x:Class="calculatorApp.MVVM.Views.CalculatorView"
+             Title="CalculatorView">
+    <ContentPage.Content>
+        
+        <StackLayout VerticalOptions="End" Padding="20" 
+            >
+            
+            <VerticalStackLayout  Padding="10" >
+            <Label Text="{Binding Model.SubDisplay}" TextColor="#888" FontSize="26" HorizontalOptions="End" VerticalOptions="CenterAndExpand" />
+            <Label FontAttributes="Bold" TextColor="#007200" Margin="10" Text="{Binding Model.Display}" FontSize="36" HorizontalOptions="End" VerticalOptions="CenterAndExpand" />
+            </VerticalStackLayout>
+            <Line HeightRequest=".5" BackgroundColor="#007000"  ></Line>
+            
+            <Grid ColumnSpacing="10" RowSpacing="10" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="80" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button FontSize="Large" FontAttributes="Bold" BackgroundColor="#ddd" TextColor="OrangeRed" CornerRadius="50" Text="C" Grid.Row="0" Grid.Column="0" Command="{Binding ClearButtonCommand}" />
+                <Button FontSize="Large" FontAttributes="Bold" BackgroundColor="#ddd" TextColor="#007000" CornerRadius="50" Text="" Grid.Row="0" Grid.Column="1" Command="{Binding OperationButtonCommand}" CommandParameter="del" 
+                         >
+                    <Button.ImageSource>
+                        <FontImageSource 
+            Glyph="&#xf55a;" 
+            FontFamily="FontAwesome5FreeRegular" 
+            Size="24" 
+            Color="#007000" />
+                    </Button.ImageSource>
+                </Button>
+                <Button FontSize="Large" FontAttributes="Bold" BackgroundColor="#ddd" TextColor="#007000" CornerRadius="50" Text="%" Grid.Row="0" Grid.Column="2" Command="{Binding OperationButtonCommand}" CommandParameter="%" />
+                <Button FontSize="Large" FontAttributes="Bold" BackgroundColor="#ddd" TextColor="#007000" CornerRadius="50" Text="/" Grid.Row="0" Grid.Column="3" Command="{Binding OperationButtonCommand}" CommandParameter="/" />
+                         
+                <Button FontSize="Large" BackgroundColor="#ddd" TextColor="#333" CornerRadius="50" Text="7" Grid.Row="1" Grid.Column="0" Command="{Binding NumberButtonCommand}" CommandParameter="7" />
+                <Button FontSize="Large" BackgroundColor="#ddd" TextColor="#333" CornerRadius="50" Text="8" Grid.Row="1" Grid.Column="1" Command="{Binding NumberButtonCommand}" CommandParameter="8" />
+                <Button FontSize="Large" BackgroundColor="#ddd" TextColor="#333" CornerRadius="50" Text="9" Grid.Row="1" Grid.Column="2" Command="{Binding NumberButtonCommand}" CommandParameter="9" />
+                <Button FontSize="Large" FontAttributes="Bold" BackgroundColor="#ddd" TextColor="#007000" CornerRadius="50" Text="*" Grid.Row="1" Grid.Column="3" Command="{Binding OperationButtonCommand}" CommandParameter="*" />
+                        
+                <Button FontSize="Large" BackgroundColor="#ddd" TextColor="#333" CornerRadius="50" Text="4" Grid.Row="2" Grid.Column="0" Command="{Binding NumberButtonCommand}" CommandParameter="4" />
+                <Button FontSize="Large" BackgroundColor="#ddd" TextColor="#333" CornerRadius="50" Text="5" Grid.Row="2" Grid.Column="1" Command="{Binding NumberButtonCommand}" CommandParameter="5" />
+                <Button FontSize="Large" BackgroundColor="#ddd" TextColor="#333" CornerRadius="50" Text="6" Grid.Row="2" Grid.Column="2" Command="{Binding NumberButtonCommand}" CommandParameter="6" />
+                <Button FontSize="Large" FontAttributes="Bold" BackgroundColor="#ddd" TextColor="#007000" CornerRadius="50" Text="-" Grid.Row="2" Grid.Column="3" Command="{Binding OperationButtonCommand}" CommandParameter="-" />
+                         
+                <Button FontSize="Large" BackgroundColor="#ddd" TextColor="#333" CornerRadius="50" Text="1" Grid.Row="3" Grid.Column="0" Command="{Binding NumberButtonCommand}" CommandParameter="1" />
+                <Button FontSize="Large" BackgroundColor="#ddd" TextColor="#333" CornerRadius="50" Text="2" Grid.Row="3" Grid.Column="1" Command="{Binding NumberButtonCommand}" CommandParameter="2" />
+                <Button FontSize="Large" BackgroundColor="#ddd" TextColor="#333" CornerRadius="50" Text="3" Grid.Row="3" Grid.Column="2" Command="{Binding NumberButtonCommand}" CommandParameter="3" />
+                <Button FontSize="Large" FontAttributes="Bold" BackgroundColor="#ddd" TextColor="#007000" CornerRadius="50" Text="+" Grid.Row="3" Grid.Column="3" Command="{Binding OperationButtonCommand}" CommandParameter="+" />
+
+                <Button FontSize="Large" BackgroundColor="#ddd" TextColor="#333" CornerRadius="50" Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Command="{Binding NumberButtonCommand}" CommandParameter="0" />
+                <Button FontSize="Large" BackgroundColor="#ddd" TextColor="#007000" CornerRadius="50" Text="." Grid.Row="4" Grid.Column="2" Command="{Binding NumberButtonCommand}" CommandParameter="." />
+                <Button FontSize="Large" FontAttributes="Bold" BackgroundColor="#007000" TextColor="White" CornerRadius="50" Text="=" Grid.Row="4" Grid.Column="3" Command="{Binding EqualsButtonCommand}" />
+                
+
+                
+                
+                
+                
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
