@@ -31,7 +31,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button FontSize="Large" FontAttributes="Bold" BackgroundColor="#ddd" TextColor="OrangeRed" CornerRadius="50" Text="C" Grid.Row="0" Grid.Column="0" Command="{Binding ClearButtonCommand}" />
-                <Button FontSize="Large" FontAttributes="Bold" BackgroundColor="#ddd" TextColor="#007000" CornerRadius="50" Text="" Grid.Row="0" Grid.Column="1" Command="{Binding OperationButtonCommand}" CommandParameter="del" 
+                <Button FontSize="Large" FontAttributes="Bold" BackgroundColor="#ddd" TextColor="#007000" CornerRadius="50" Text="" Grid.Row="0" Grid.Column="1" Command="{Binding BackSpaceButtonCommand}" CommandParameter="del" 
                          >
                     <Button.ImageSource>
                         <FontImageSource 

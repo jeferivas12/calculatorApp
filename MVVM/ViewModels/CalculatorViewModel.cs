@@ -11,8 +11,9 @@ namespace calculatorApp.MVVM.ViewModels
         public ICommand OperationButtonCommand { get; set; }
         public ICommand EqualsButtonCommand { get; set; }
         public ICommand ClearButtonCommand { get; set; }
+        public ICommand BackSpaceButtonCommand { get; set; }
 
-        
+
 
         private double _currentResult;
         public double _lastNumber;
@@ -25,6 +26,7 @@ namespace calculatorApp.MVVM.ViewModels
             OperationButtonCommand = new Command<string>(HandleOperationButton);
             EqualsButtonCommand = new Command(HandleEqualsButton);
             ClearButtonCommand = new Command(HandleClearButton);
+            BackSpaceButtonCommand = new Command(HandleBackSpaceButton);
         }
 
         private void HandleNumberButton(string number)
@@ -70,6 +72,14 @@ namespace calculatorApp.MVVM.ViewModels
             _lastNumber= 0;
         }
 
+        private void HandleBackSpaceButton () 
+        {
+            if (!string.IsNullOrEmpty(Model.Display))
+            {
+                Model.Display = Model.Display[..^1];
+                Model.SubDisplay = Model.SubDisplay[..^1];
+            }
+        }
         private double PerformOperation(double firstNumber, double secondNumber, string operation)
         {
             double result = 0;
