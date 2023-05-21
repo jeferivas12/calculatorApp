@@ -402,4 +402,18 @@
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
+    <Style TargetType="Button" x:Key="baseButton">
+        <Setter Property="BackgroundColor" Value="{StaticResource bgColor}"/>
+        <Setter Property="FontSize" Value="Large"/>
+        <Setter Property="CornerRadius" Value="50"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="TextColor" Value="{StaticResource text2Color}"/>
+    </Style>
+    <Style TargetType="Button" x:Key="primaryButton" BasedOn="{StaticResource baseButton}">
+    </Style>
+    <Style TargetType="Button" x:Key="secondaryButton" BasedOn="{StaticResource baseButton}">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="TextColor" Value="{StaticResource textColor}"/>
+    </Style>
+
 </ResourceDictionary>
